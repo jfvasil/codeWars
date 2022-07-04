@@ -132,3 +132,36 @@ function oddOrEven(array) {
     // The second value in the first integer array is 0, since the bus is empty in the first bus stop.
 
     const number = (busStops) => busStops.reduce((rem, [on, off]) => rem + on - off, 0)
+    // Build a function that returns an array of integers from n to 1 where n>0.
+
+    // Example : n=5 --> [5,4,3,2,1]
+    const reverseSeq = n => {
+      let arr = [];
+        for (let i=n; i>0; i--) {
+          arr.push(i);
+          } return arr;
+      };
+      
+//       Given an array of integers, find the one that appears an odd number of times.
+
+// There will always be only one integer that appears an odd number of times.
+
+
+      function oddOne(arr){
+        return arr.reduce((a, c) =>  a ^c)
+      }
+      // You receive an array with your peers' test scores. Now calculate the average and compare your score!
+
+      // Return True if you're better, else False!
+      
+      
+      let betterThanAverage = (classPoints, yourPoints) =>
+   ((classPoints.reduce((a, c) => a + c, 0) + yourPoints) / (classPoints.length +1)) < yourPoints 
+//    Simple, given a string of words, return the length of the shortest word(s).
+
+// String will never be empty and you do not need to account for different data types.
+function findShort(s){
+  let arr = s.split(' ')
+  arr.sort((a, b) => a.length - b.length)
+   return arr[0].length
+ }
