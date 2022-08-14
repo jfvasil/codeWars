@@ -294,3 +294,16 @@ function likes(names) {
   }
     
   }
+//Complete the function to return true if the two arguments given are anagrams of each other; return false otherwise.
+
+
+  var isAnagram = function(test, original) {
+    return test.toLowerCase().split('').sort().join('') === original.toLowerCase().split('').sort().join('')
+//Write a function that produces an array with the numbers 0 to N-1 in it.
+    const arr = N => {
+      let arr = []
+      for(let i = 0; i< N; i++){
+        arr.push(i)
+      }
+      return arr
+    };
