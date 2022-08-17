@@ -328,3 +328,7 @@ function likes(names) {
     function solution(nums){
       return nums === null ? [] : nums.sort((a, b) => a - b)
      }
+     //Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+     function removeExclamationMarks(s) {
+  return s.replace(/!/gi, '');
+}
