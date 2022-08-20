@@ -336,3 +336,16 @@ function likes(names) {
 function index(array, n){
   return array.length <= n ? -1 : Math.pow(array[n], n)
 }
+//We need a simple function that determines if a plural is needed or not. It should take a number, and return true if a plural should be used with that number or false if not. 
+function plural(n) {
+  return n === 1 ? false : true
+    
+  
+}
+
+//Given an integral number, determine if it's a square number:
+var isSquare = function(n){
+  let square =  Math.sqrt(n)
+  return Number.isInteger(square)
+
+}
