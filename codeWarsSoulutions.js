@@ -380,3 +380,20 @@ function removeUrlAnchor(url){
       return url
     }
 }
+// Your mission:
+// Write a function called checkCoupon which verifies that a coupon code is valid and not expired.
+
+// A coupon is no more valid on the day AFTER the expiration date. All dates will be passed as strings in this format: "MONTH DATE, YEAR".
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
+  return (enteredCode == correctCode) && (Date.parse(currentDate) <= Date.parse(expirationDate))
+}
+// You are given the length and width of a 4-sided polygon. The polygon can either be a rectangle or a square.
+// If it is a square, return its area. If it is a rectangle, return its perimeter
+const areaOrPerimeter = function(l , w) {
+  if(l === w){
+    return l*w
+  } else{
+    return (l +w) * 2
+  }
+};
+
