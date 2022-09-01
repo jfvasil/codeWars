@@ -422,3 +422,35 @@ function shortcut (string) {
       let results = sorted.join('')
       return Number(results)
     }
+
+    //Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+    function XO(str) {
+      let arr = str.split('')
+      let os = 0
+      let xs = 0
+      arr.forEach(x => {
+        if(x === 'o' || x === 'O'){
+          os++
+        } else if(x === 'x' || x === 'X'){
+          xs++
+        } 
+      })
+    return os === xs
+  }
+  //If a name has exactly 4 letters in it, you can be sure that it has to be a friend of yours! Otherwise, you can be sure he's not...
+  function friend(friends){
+    let realFriends = []
+    friends.map(x =>{
+      if(x.length === 4){
+        realFriends.push(x)
+      }
+    })
+    return realFriends
+    }
+    //Write a function that always returns 5
+
+// Sounds easy right? Just bear in mind that you can't use any of the following characters: 0123456789*+-/
+function unusualFive() {
+  let word = 'returnFive'
+  return word.indexOf('n')
+}
