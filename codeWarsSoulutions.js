@@ -454,3 +454,37 @@ function unusualFive() {
   let word = 'returnFive'
   return word.indexOf('n')
 }
+//Given a string str, reverse it and omit all non-alphabetic characters.
+function reverseLetter(str) {
+  let replaced = str.replace(/[^a-zA-Z]/gi, "")
+  return replaced.split('').reverse().join('')
+  
+}
+//In this simple exercise, you will create a program that will take two lists of integers, a and b. Each list will consist of 3 positive integers above 0, representing the dimensions of cuboids a and b. You must find the difference of the cuboids' volumes regardless of which is bigger.
+
+
+function findDifference(a, b) {
+  return Math.abs(a.reduce((x,y) => x *y) - b.reduce((x,y) => x *y))
+}
+//Your program will take in a string and clean out all numeric characters, and return a string with spacing and special characters ~#$%^&!@*():;"'.,? all intact.
+
+function stringClean(s){
+  return s.replace(/[0-9]/gi, '')
+ }
+//There is an array with some numbers. All numbers are equal except for one. Try to find it! Find the unique number
+ function findUniq(arr) {
+  let arr1 = arr.filter((x, i, a) => a.indexOf(x) === a.lastIndexOf(x))
+  return arr1[0]
+ }
+ //You will be given an array and a limit value. You must check that all values in the array are below or equal to the limit value. If they are, return true. Else, return false.
+
+
+ function smallEnough(a, limit){
+  let arr = []
+ a.forEach(x => {
+   if(x <= limit){
+     arr.push(x)
+   }
+ })
+  return arr.length === a.length 
+}
