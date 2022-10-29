@@ -488,3 +488,79 @@ function stringClean(s){
  })
   return arr.length === a.length 
 }
+//Write a small function that returns the values of an array that are not odd.
+
+function noOdds( values ){
+  let evens = values.filter(x => x % 2 == 0)
+  return evens 
+ }
+
+ //Given a 2D ( nested ) list ( array, vector, .. ) of size m * n, your task is to find the sum of the minimum values in each row.
+
+ function sumOfMinimums(arr) {
+  let sum = []
+  let sorted = arr.map(x => x.sort((a,b) => a -b))
+    sorted.forEach(x =>{
+      sum.push(x[0])
+    })
+ return sum.reduce((a,c) => a +c)
+}
+
+//In this Kata, you will be given a string that may have mixed uppercase and lowercase letters and your task is to convert that string to either lowercase only or uppercase only based on:
+// make as few changes as possible.
+// if the string contains equal number of uppercase and lowercase letters, convert the string to lowercase.
+
+function solve(str){
+  let lower = []
+  let upper = []
+  for(let i = 0; i < str.length; i++){
+    if(str.charCodeAt(i) >= 97 ){
+      lower.push(str[i])
+    } else{
+      upper.push(str[i])
+    }
+  }
+  if(upper.length === lower.length){
+    return str.toLowerCase()
+  } else if(upper.length > lower.length){
+    return str.toUpperCase()
+  } else{
+    return str.toLowerCase()
+  }
+}
+
+//Given an array of positive integers (the weights of the people), return a new array/tuple of two integers, where the first one is the total weight of team 1, and the second one is the total weight of team 2.
+
+function rowWeights(array){
+  let team1 = 0
+  let team2 = 0
+  array.forEach((x,i,a) =>{
+    if(i % 2 == 0){
+      team1 += a[i]
+    } else{
+      team2 += a[i]
+    }
+  })
+  
+  return [team1, team2]
+}
+
+// You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+
+// Complete the method which accepts such an array, and returns that single different number.
+
+// The input array will always be valid! (odd-length >= 3)
+
+function stray(numbers) {
+  let obj = {}
+  let count = 0
+  numbers.forEach(x =>{
+    if(!obj[x]){
+      obj[x] = 1 
+    } else{
+      obj[x] += 1
+    }
+  })
+    let results = Object.keys(obj).find(key => obj[key] === 1)
+    return Number(results)
+ }
