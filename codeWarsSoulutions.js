@@ -564,3 +564,30 @@ function stray(numbers) {
     let results = Object.keys(obj).find(key => obj[key] === 1)
     return Number(results)
  }
+// write a function that converts roman numerals to regular numbers
+ function romanNumerals(str){
+  let convo = {
+    'I' : 1,
+    'V' : 5,
+    'X' : 10,
+    'L' : 50,
+    'C' : 100,
+    'D' : 500,
+    'M' : 1000
+  }
+  let sum = 0
+  let arr = str.split('')
+  for(let i = 0; i < arr.length; i++){
+    let cur = arr[i]
+    let curConvo = convo[cur]
+    let next = arr[i +1]
+    let nextConvo = convo[next]
+
+    if(curConvo < nextConvo){
+       sum -= curConvo
+    } else{
+      sum += curConvo
+    }
+  }
+    return sum 
+}
