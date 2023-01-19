@@ -613,3 +613,31 @@ function count (string) {
   }
   return obj
 }
+
+//Your task is to write function factorial.
+
+function factorial(n){
+  return n <= 1 ? 1 : n * factorial(n-1) ;
+}
+
+// Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
+
+function persistence(num){
+  let count = 0
+  while(`${num}`.length > 1){
+    count++
+    num = `${num}`.split('').reduce((a, b) => a * b)
+  }
+  return count
+}
+
+// Given a string of arbitrary length with any ascii characters. Write a function to determine whether the string contains the whole word "English".
+function spEng(sentence){
+  return sentence.toLowerCase().includes('english')
+}
+
+// Determine the total number of digits in the integer (n>=0) given as input to the function.
+function digits(n) {
+  let arr = n.toString().split('')
+  return arr.length
+}
