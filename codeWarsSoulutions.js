@@ -641,3 +641,11 @@ function digits(n) {
   let arr = n.toString().split('')
   return arr.length
 }
+
+//Create a function that takes a string and returns the string ciphered with Rot13.
+
+function rot13(string){
+  let a = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  let b = 'nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM'
+  return string.replace(/[a-z]/gi, c => b[a.indexOf(c)])
+ }
