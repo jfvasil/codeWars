@@ -649,3 +649,34 @@ function rot13(string){
   let b = 'nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM'
   return string.replace(/[a-z]/gi, c => b[a.indexOf(c)])
  }
+//Step 1: Create a function called encode() to replace all the lowercase vowels in a given string with numbers according to the following pattern:
+
+function encode(string){
+  return string.replace(/[aeiou]/g, function (x) { return '_aeiou'.indexOf(x) });
+}
+
+//Step 2: Now create a function called decode() to turn the numbers back into vowels according to the same pattern shown above.
+
+
+function decode(string){
+  return string.replace(/[1-5]/g, function (x) { return '_aeiou'.charAt(x) });
+}
+
+// Given the a list of numbers, return a fixed list so that the values increment by 1 for each index from the minimum value up to the maximum value (both included).
+
+function pipeFix(numbers){
+  let arr = []
+    for( let i = numbers[0]; i<=numbers[numbers.length -1]; i++){
+      arr.push(i)
+    }
+    return arr
+  }
+//   Suzuki is a monk who climbs a large staircase to the monastery as part of a ritual. Some days he climbs more stairs than others depending on the number of students he must train in the morning. He is curious how many stairs might be climbed over the next 20 years and has spent a year marking down his daily progress.
+
+// The sum of all the stairs logged in a year will be used for estimating the number he might climb in 20.
+
+
+  function stairsIn20(s){
+    let year = s.flat(1)
+    return year.reduce((a,b) => a + b) * 20
+   }
