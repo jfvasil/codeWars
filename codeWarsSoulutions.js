@@ -680,3 +680,26 @@ function pipeFix(numbers){
     let year = s.flat(1)
     return year.reduce((a,b) => a + b) * 20
    }
+
+   //Find all integers between m and n (m and n integers with 1 <= m <= n) such that the sum of their squared divisors is itself a square.
+   function listSquared(m, n) {
+    let arr = []
+   for(let i = m; i <= n; i ++){
+     let temp = 0
+     for(let j = 1; j <= i; j++){
+       if(i % j === 0){
+         temp += j * j
+       }
+       }
+       if(Math.sqrt(temp) % 1 === 0){
+         arr.push([i,temp])
+       }
+   }
+   return arr 
+ }
+//Your task is to write a function that takes a String and returns an Array/list with the length of each word added to each element .
+ function addLength(str) {
+  let arr = str.split(' ')
+  let result = arr.map(x => x = x + ' ' + `${x.length}` )
+  return result
+}
