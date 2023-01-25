@@ -749,3 +749,24 @@ function stringChunk(str, n) {
   return results
     }
 }
+
+// The input is a string str of digits. Cut the string into chunks (a chunk here is a substring of the initial string) of size sz (ignore the last chunk if its size is less than sz).
+
+// If a chunk represents an integer such as the sum of the cubes of its digits is divisible by 2, reverse that chunk; otherwise rotate it to the left by one position. Put together these modified chunks and return the result as a string.
+function revrot(str, sz){
+  if(sz <= 0 || !str || sz > str.length){
+    return ""
+  }
+  let final = []
+  for(let i = 0; i<str.length; i+=sz){
+    let chunk = str.slice(i, i + sz)
+    if(chunk.length === sz){
+       if(chunk.split('').map(el => Number(el**3)).reduce((a,c) => a +c) % 2 === 0){
+      final.push(chunk.split('').reverse().join(''))
+    }else{
+      final.push(chunk.substring(1,chunk.length) + chunk.substring(0,1))
+    }
+  }
+    }
+    return final.join('')
+  }
