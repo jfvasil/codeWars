@@ -703,3 +703,49 @@ function pipeFix(numbers){
   let result = arr.map(x => x = x + ' ' + `${x.length}` )
   return result
 }
+
+//In John's car the GPS records every s seconds the distance travelled from an origin (distances are measured in an arbitrary but consistent unit)
+//Given s and x the task is to return as an integer the *floor* of the maximum average speed per hour obtained on the sections of x. If x length is less than or equal to 1 return 0 since the car didn't move.
+
+function gps(s, x) {
+  let maxDis = 0
+  let speeds = []
+  for(let i = 0; i<=x.length; i++){
+    if(x[i +1] - x[i] > maxDis){
+      maxDis = x[i +1] - x[i]
+}
+  
+  }
+return Math.floor((3600 * maxDis) / s)
+}
+
+//Return a new array consisting of elements which are multiple of their own index in input array (length > 1).
+function multipleOfIndex(array) {
+  let final = []
+  array.forEach((el,i) => {
+    if(el % i === 0){
+      final.push(el)
+    }
+  })
+  return final
+}
+
+// You should write a function that takes a string and a positive integer n, splits the string into parts of length n and returns them in an array. It is ok for the last element to have less than n characters.
+
+// If n is not a number or not a valid size (> 0) (or is absent), you should return an empty array.
+
+// If n is greater than the length of the string, you should return an array with the only element being the same string.
+function stringChunk(str, n) {
+  if(n !== Number(n) || n <= 0){
+    return []
+  } else if(n > str.length){
+    return [str]
+  }else{
+  let results = []
+  for(let i = 0; i<str.length; i+=n){
+    let chunk = str.slice(i, i + n)
+    results.push(chunk)
+  }
+  return results
+    }
+}
