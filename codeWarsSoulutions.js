@@ -770,3 +770,12 @@ function revrot(str, sz){
     }
     return final.join('')
   }
+
+//not my solution.. Build a pyramid-shaped tower, as an array/list of strings, given a positive integer number of floors. A tower block is represented with "*" character.
+  function towerBuilder(nFloors) {
+    let arr = []
+ for(let i = 0; i < nFloors; i++){
+   arr.push(" ".repeat(nFloors - i - 1) + '*'.repeat((i * 2) + 1) + " ".repeat(nFloors - i - 1))
+ }
+ return arr
+ }
