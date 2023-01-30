@@ -779,3 +779,17 @@ function revrot(str, sz){
  }
  return arr
  }
+ //Complete the function power_of_two/powerOfTwo (or equivalent, depending on your language) that determines if a given non-negative integer is a power of two.
+function isPowerOfTwo(n){
+ if(n === 1){
+    return true
+  }
+  let num
+ for(let i = 2; i <= n; i*=2){
+    if(i === n){
+      num = 'true'
+    }
+ }
+ return num === 'true'
+  
+}
