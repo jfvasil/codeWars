@@ -825,3 +825,48 @@ function countSmileys(arr) {
       }
     return count
   }
+
+  //Your task is to construct a building which will be a pile of n cubes. The cube at the bottom will have a volume of n^3 
+  //the cube above will have a volume of (n - 1)^3 and so on. You are given the total volume m of the building. Being given m can you find the number n of cubes you will have to build?
+
+  
+function cubeTower(m){
+  let n = 0
+  while(m > 0){
+    m -= ++n**3
+  }
+  if(m){
+    return -1
+  }else{
+    return n
+  }
+}
+
+// if　a = 1, b = 2, c = 3 ... z = 26
+
+// Then l + o + v + e = 54
+
+// and f + r + i + e + n + d + s + h + i + p = 108
+
+// So friendship is twice as strong as love :-)
+
+// Your task is to write a function which calculates the value of a word based off the sum of the alphabet positions of its characters.
+
+function wordsToMarks(string){
+  let arr = string.split('').map((el,i) => string.charCodeAt(i) - 96)
+  return arr.reduce((a,c) => a + c)
+  }
+
+  // Your car is old, it breaks easily. The shock absorbers are gone and you think it can handle about 15 more bumps before it dies totally.
+
+  // Unfortunately for you, your drive is very bumpy! Given a string showing either flat road (_) or bumps (n). If you are able to reach home safely by encountering 15 bumps or less, return Woohoo!, otherwise return Car Dead
+
+  function bump(x){
+    let bumps = 0
+    for(let char of x){
+      if(char === 'n'){
+        bumps++
+      }
+    }
+    return bumps > 15 ? 'Car Dead' : 'Woohoo!'
+  }
