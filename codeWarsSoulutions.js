@@ -932,3 +932,30 @@ function duplicateCount(text){
    }
    return count
  }
+//  Find the greatest common divisor of two positive integers. The integers can be large, so you need to find a clever solution.
+
+//  The inputs x and y are always greater or equal to 1, so the greatest common divisor will always be an integer that is also greater or equal to 1.
+ function mygcd(x,y){
+  return y === 0 ? x : mygcd(y,x % y)
+}
+// In this problem, we are going to be implementing our own enqueue, dequeue, and size methods for the queue constructor we are creating, so we should be able to create new instances of the Queue.
+class Queue {
+  constructor() {
+    this._queue = []
+  }
+  get queue(){
+    return this._queue
+  }
+}
+
+Queue.prototype.enqueue = function(item) {
+  return this.queue.push(item)
+};
+
+Queue.prototype.dequeue = function() {
+  return this.queue.shift()
+};
+
+Queue.prototype.size = function() {
+  return this.queue.length
+}
