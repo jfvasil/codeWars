@@ -959,3 +959,12 @@ Queue.prototype.dequeue = function() {
 Queue.prototype.size = function() {
   return this.queue.length
 }
+
+
+// Write a function named sumDigits which takes a number as input and returns the sum of the absolute value of each of the number's decimal digits.
+
+function sumDigits(number) {
+  number = Math.abs(number)
+  let numArray = Array.from(String(number), Number)
+  return numArray.reduce((a, c) => a + c)
+}
