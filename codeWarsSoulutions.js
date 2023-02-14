@@ -968,3 +968,9 @@ function sumDigits(number) {
   let numArray = Array.from(String(number), Number)
   return numArray.reduce((a, c) => a + c)
 }
+//Given a sequence of numbers, find the largest pair sum in the sequence.
+
+function largestPairSum (numbers) {
+ let sorted =  numbers.sort((a, b) => a - b)
+  return sorted[sorted.length - 1] + sorted[sorted.length - 2]
+}
