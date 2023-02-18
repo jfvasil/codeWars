@@ -974,3 +974,16 @@ function largestPairSum (numbers) {
  let sorted =  numbers.sort((a, b) => a - b)
   return sorted[sorted.length - 1] + sorted[sorted.length - 2]
 }
+// Could you make a program that
+
+// makes this string uppercase
+// gives it sorted in alphabetical order by last name.
+// When the last names are the same, sort them by first name. Last name and first name of a guest come in the result between parentheses separated by a comma.
+
+
+function meeting(s) {
+  s = s.toUpperCase()
+    let arr = s.split(';').map(el => '(' + el.slice(el.indexOf(':') + 1) + ', ' + el.slice(0,el.indexOf(':')) + ')').sort().join('')
+  return arr
+
+}
