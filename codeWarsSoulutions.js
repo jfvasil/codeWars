@@ -1028,3 +1028,16 @@ function sumCubes(n){
   }
   return sum
 }
+
+// our task is to check wheter a given integer is a perfect power. If it is a perfect power, return a pair m and k with mk = n as a proof. Otherwise return Nothing, Nil, null, NULL, None or your language's equivalent
+var isPP = function(n){
+  let answer 
+ for(let i = 2; i<1000;i++){
+   for(let j = 2; j<100;j++){
+     if(Math.pow(i,j) === n){
+       answer = [i,j]
+     }
+   }
+ }
+    return answer ? answer : null
+ }
