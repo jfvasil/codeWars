@@ -1041,3 +1041,17 @@ var isPP = function(n){
  }
     return answer ? answer : null
  }
+
+//  I will give you an integer. Give me back a shape that is as long and wide as the integer. The integer will be a whole number between 1 and 50.
+
+
+ function generateShape(integer){
+  let line = ['\n']
+  let i = 1
+  while(i <= integer){
+    line.unshift('+')
+    i++
+  }
+  let square = line.join('').repeat(integer)
+  return square.slice(0,square.length-1)
+}
