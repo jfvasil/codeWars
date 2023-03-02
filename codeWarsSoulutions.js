@@ -1055,3 +1055,18 @@ var isPP = function(n){
   let square = line.join('').repeat(integer)
   return square.slice(0,square.length-1)
 }
+
+// My grandfather always predicted how old people would get, and right before he passed away he revealed his secret!
+
+// In honor of my grandfather's memory we will write a function using his formula!
+
+// Take a list of ages when each of your great-grandparent died.
+// Multiply each number by itself.
+// Add them all together.
+// Take the square root of the result.
+// Divide by two.
+
+function predictAge(...ages){
+  let arr = [...ages]
+  return Math.floor(Math.sqrt(arr.map(el => el * el).reduce((a,c) => a + c)) / 2)
+}
