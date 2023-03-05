@@ -1070,3 +1070,17 @@ function predictAge(...ages){
   let arr = [...ages]
   return Math.floor(Math.sqrt(arr.map(el => el * el).reduce((a,c) => a + c)) / 2)
 }
+
+//Your task, is to create N×N multiplication table, of size provided in parameter.
+multiplicationTable = function(size) {
+  let final = []
+  for(let i = 1; i<=size; i++){
+    let tempArr = []
+    for(let j = 1; j<=size; j++){
+      tempArr.push(i * j )
+      
+    }
+    final.push(tempArr)
+  }
+  return final 
+}
