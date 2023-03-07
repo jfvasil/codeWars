@@ -1084,3 +1084,27 @@ multiplicationTable = function(size) {
   }
   return final 
 }
+// Complete the method which returns the number which is most frequent in the given input array. If there is a tie for most frequent number, return the largest number among them.
+
+
+
+function highestRank(arr){
+  let highest = []
+  let hash = {}
+  let currentCount = 0
+  for(let num of arr){
+    if(!hash[num]){
+      hash[num] = 1
+    } else{
+      hash[num] += 1
+    }
+    
+    if(hash[num] > currentCount){
+      currentCount = hash[num]
+      highest = [num]
+    } else if(currentCount === hash[num]){
+      highest.push(num)
+    }
+  }
+  return Math.max(...highest)
+  }
