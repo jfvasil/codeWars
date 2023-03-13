@@ -1108,3 +1108,22 @@ function highestRank(arr){
   }
   return Math.max(...highest)
   }
+  // You will be given a number and you will need to return it as a string in Expanded Form.
+
+
+  function expandedForm(num) {
+    let ns = num.toString()
+    if(ns.length <= 1){
+      return num 
+    }
+    let arr = []
+    for(let i = 0; i<ns.length; i++){
+      if(ns[i] !== '0'){
+        arr.push(ns[i] + '0'.repeat(ns.length - i - 1))
+      
+      
+    } 
+    
+  }
+    return arr.join(' + ')
+    }
