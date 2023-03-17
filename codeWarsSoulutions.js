@@ -1139,3 +1139,26 @@ function highestRank(arr){
         }
       return Number(arr.join(''))
     }
+    // You need to return a string that looks like a diamond shape when printed on the screen, using asterisk (*) characters. Trailing spaces should be removed, and every line must be terminated with a newline character (\n).
+
+    // Return null/nil/None/... if the input is an even number or negative, as it is not possible to print a diamond of even or negative size.
+    function diamond(n){
+  if(n % 2 === 0 || n <= 0){
+    return null 
+  }
+  let arr1 = []
+  let arr2 = []
+  for(let i = 1; i<=n; i+=2){
+    arr1.push(' '.repeat(Math.floor((n - i + 1)/2)))
+    arr1.push('*'.repeat(i))
+    arr1.push('\n')
+  }
+
+  for(let i = n - 2; i>=1; i-=2){
+    arr2.push(' '.repeat(Math.floor((n -i +1)/2)))
+    arr2.push('*'.repeat(i))
+    arr2.push('\n')
+  }
+  
+  return arr1.concat(arr2).join('')
+}
