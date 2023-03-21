@@ -1169,3 +1169,31 @@ var greet = function(name) {
   name = name[0].toUpperCase() + name.slice(1).toLowerCase()
 return `Hello ${name}!`
 };
+
+// We want to generate a function that computes the series starting from 0 and ending until the given number.
+
+
+
+var SequenceSum = (function() {
+  function SequenceSum() {}
+
+  SequenceSum.showSequence = function(count) {
+    if(count === 0){
+      return '0=0'
+    } else if(count < 0){
+      return `${count}<0`
+    }
+    
+    let nArr = []
+    let i = 0
+    while(i<=count){
+      nArr.push(i)
+      i++
+    }
+    let total = nArr.reduce((a,c) => a + c)
+    return nArr.join('+') + ` = ${total}`
+  };
+
+  return SequenceSum;
+
+})();
