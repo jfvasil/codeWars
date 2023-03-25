@@ -1197,3 +1197,12 @@ var SequenceSum = (function() {
   return SequenceSum;
 
 })();
+
+// You must implement a function that returns the difference between the largest and the smallest value in a given list / array (lst) received as the parameter.
+function maxDiff(list) {
+  if(list.length <= 1){
+    return 0
+  }
+  list = list.sort((a,b) => a - b)
+  return Math.abs(list[0] - list[list.length - 1])
+};
