@@ -1206,3 +1206,14 @@ function maxDiff(list) {
   list = list.sort((a,b) => a - b)
   return Math.abs(list[0] - list[list.length - 1])
 };
+
+// Write a function reverse which reverses a list (or in clojure's case, any list-like data structure)
+
+// (the dedicated builtin(s) functionalities are deactivated)
+reverse = function(array) {
+  let fin = []
+  for(let el of array){
+    fin.unshift(el)
+  }
+  return fin
+}
