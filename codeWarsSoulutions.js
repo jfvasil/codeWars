@@ -1277,3 +1277,24 @@ function first(arr, n) {
     return arr.slice(0,n)
   }
 }
+// Given an array/list of integers, find the Nth smallest element in the array.
+
+
+
+function nthSmallest(arr, pos){
+  let s = arr.sort((a, b) => a - b)
+  return s[pos - 1]
+}
+
+// Find the sum of the odd numbers within an array, after cubing the initial integers. The function should return undefined if any of the values aren't numbers.
+
+function cubeOdd(arr) {
+  for(let char of arr){
+    if(typeof char !== 'number'){
+      return undefined
+    }
+  }
+  arr = arr.map(num => Math.pow(num, 3)).filter(num => num % 2 !== 0)
+  return arr.reduce((a, c) => a + c)
+    
+  }
